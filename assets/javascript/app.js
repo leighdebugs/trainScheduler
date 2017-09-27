@@ -63,16 +63,32 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   console.log(trainFreq);
 
   //convert trainTime via momentjs
-  var timeUnix = moment.unix(trainTime).format("HH:mm");
-  console.log(timeUnix);
+  // var timeUnix = moment(trainTime).format("HH:mm");
+  // console.log(timeUnix);
 
-  //calculate next arrival
-  var newFreq = trainFreq;
-  var firstTime = timeUnix;
-  var firstTimeConv = moment(firstTime, "HH:mm").subtract(1, "years");
-  console.log(firstTimeConv);
+  //calculate minutes until next train
+  var trainTimeConv = moment(trainTime, "HH:mm").subtract(1, "years");
+  console.log(trainTimeConv);
+
+  var currentTime = moment();
+  console.log("Current Time: " + moment(currentTime).format("HH:mm"));
+  
+  var timeDiff = moment().diff(moment(trainTimeConv), "minutes");
+  console.log("Difference in time: " + timeDiff);
+
+  var tRemainder = timeDiff % trainFreq;
+  console.log(tRemainder);
+
+  var minTillTrain = trainFreq - tRemainder;
+  console.log("Minutes till train: " + minTillTrain);
+
+  //calculate time of next train
+  var nextTrain = moment().add(minTillTrain, "minutes").format("HH:mm");
+  console.log("Arrival Time: " + nextTrain);
+
+    // Add each train's data into the table
+  $("#current-schedule > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDest + "</td><td>" +
+  trainFreq + "</td><td>" + nextTrain + "</td><td>" + minTillTrain + "</td></tr>");
 
 
 });
-
-
