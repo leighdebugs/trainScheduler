@@ -1,15 +1,14 @@
-//set up firebase
-
+// Initialize Firebase
 var config = {
-  apiKey: "AIzaSyCIq6iTzUQpZ0y_e8raGRu2gfERuXRZSMk",
-  authDomain: "trainscheduler-a6b38.firebaseapp.com",
-  databaseURL: "https://trainscheduler-a6b38.firebaseio.com",
-  projectId: "trainscheduler-a6b38",
-  storageBucket: "trainscheduler-a6b38.appspot.com",
-  messagingSenderId: "372305213618"
+  apiKey: "AIzaSyAfeXYdvL_N7DeeXCU3CbecfrOfGJjUNV8",
+  authDomain: "trainscheduleupdate.firebaseapp.com",
+  databaseURL: "https://trainscheduleupdate.firebaseio.com",
+  projectId: "trainscheduleupdate",
+  storageBucket: "",
+  messagingSenderId: "841519492614"
 };
-
 firebase.initializeApp(config);
+
 
 var database = firebase.database();
 
@@ -61,10 +60,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   console.log(trainDest);
   console.log(trainTime);
   console.log(trainFreq);
-
-  //convert trainTime via momentjs
-  // var timeUnix = moment(trainTime).format("HH:mm");
-  // console.log(timeUnix);
 
   //calculate minutes until next train
   var trainTimeConv = moment(trainTime, "HH:mm").subtract(1, "years");

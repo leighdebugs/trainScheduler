@@ -5,12 +5,8 @@
 	<title>Train Scheduler</title>
 	<!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-    <!-- Moment.js Reference -->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 </head>
 <body>
 
@@ -49,34 +45,34 @@
 				</div>
 			<div class="panel-body">
 				<!--entry form-->
-				<form>
-					<div class="form-group">
-						<label for="name-input">Train Name</label>
-						<input class="form-control" id="name-input" type="text">
-					</div>
-					<div class="form-group">
-						<label for="destination-input">Destination</label>
-						<input class="form-control" id="destination-input" type="text">
-					</div>
-					<div class="form-group">
-						<label for="time-input">First Train Time (HH:mm - military time)</label>
-						<input class="form-control" id="time-input" type="text">
-					</div>
-					<div class="form-group">
-						<label for="frequency-input">Frequency (min)</label>
-						<input class="form-control" id="frequency-input" type="number">
-					</div>
-					<button class="btn btn-primary" id="add-train-btn" type="submit">Submit</button>
-				</form>
-
+				<div class="form-group">
+					<label for="name-input">Train Name</label>
+					<input class="form-control" id="name-input" type="text">
+				</div>
+				<div class="form-group">
+					<label for="destination-input">Destination</label>
+					<input class="form-control" id="destination-input" type="text">
+				</div>
+				<div class="form-group">
+					<label for="time-input">First Train Time (HH:mm - military time)</label>
+					<input class="form-control" id="time-input" type="text">
+				</div>
+				<div class="form-group">
+					<label for="frequency-input">Frequency (min)</label>
+					<input class="form-control" id="frequency-input" type="text">
+				</div>
+				<button class="btn btn-primary" id="add-train-btn" type="submit">Submit</button>
 				
 			</div>
 			</div>
 		</div>
 	</div>
-	<!--Javascript-->
-	    <script src="assets/javascript/app.js"></script>
-
+<!-- Jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Javascript -->
+<script src="assets/javascript/app.js"></script>
+<!-- Moment.js Reference -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 	
 </body>
 </html>
